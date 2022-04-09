@@ -13,7 +13,7 @@ const UpdateProduct = () =>{
     const editProduct = async (e) =>{
 
         e.preventDefault()
-        await axios.put(`http://localhost:3004/product/${id}`,{
+        await axios.put(`http://localhost:3004/api/product/${id}`,{
             title : title,
             price: price
         })
@@ -29,7 +29,7 @@ const UpdateProduct = () =>{
 
     const getProductById = async () =>{
 
-        const res = await axios.get(`http://localhost:3004/products/${id}`)
+        const res = await axios.get(`http://localhost:3004/api/products/${id}`)
         
         setTitle(res.data.title)
         setPrice(res.data.price)

@@ -11,7 +11,7 @@ const AddProduct = () => {
     const createProduct = async (e) =>{
         e.preventDefault()
 
-        await axios.post('http://localhost:3004/products/add',{
+        await axios.post('http://localhost:3004/api/products/add',{
             title: title,
             price: price
         })

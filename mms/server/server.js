@@ -1,15 +1,18 @@
 const express = require('express'),
     PORT = 3004,
-    cors = require('cors')
     bodyParser = require('body-parser'),
     server = express(),
     router = require('./router/router')
+    cors = require('cors')
+    
+    
 
     server.use(bodyParser.json())
-    .use(router)
-    .use(cors)
-    .use(bodyParser.urlencoded({extended : true}))
-    .listen(PORT,()=>console.log(
+    .use(cors())
+        .use('/api',router)
+        .use(bodyParser.urlencoded({extended : true}))
+        
+        .listen(PORT,()=>console.log(
             `[+] server started on port ${PORT} 
             [http://localhost:${PORT}]`
         )

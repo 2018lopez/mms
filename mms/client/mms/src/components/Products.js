@@ -12,14 +12,14 @@ const Product = () =>{
     }, [])
 
     const getProducts = async () => {
-        const res = await axios.get('http://localhost:3004/products')
+        const res = await axios.get('http://localhost:3004/api/products')
         
         setProduct(res.data)
     }
 
     const deleteProduct = async (id) => {
 
-        await axios.delete(`http://localhost:3004/products/${id}`)
+        await axios.delete(`http://localhost:3004/api/products/${id}`)
         getProducts()
     }
 
